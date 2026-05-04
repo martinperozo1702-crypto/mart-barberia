@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
@@ -7,12 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Martin Perozo — Barbero Profesional</title>
   <link rel="icon" type="image/png" href="img/logo-metalico.png">
-  <link rel="apple-touch-icon" href="img/logo-metalico.pnggit ">
+  <link rel="apple-touch-icon" href="img/logo-metalico.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <meta name="description" content="Barbería premium a domicilio en Medellín. Cortes, barba y cejas con Martin Perozo.">
+  <meta property="og:title" content="Martin Perozo — Barbero Profesional">
+  <meta property="og:description" content="Barbería premium a domicilio en Medellín. Cortes, barba y cejas.">
+  <meta property="og:image" content="https://martinperozo1702-crypto.github.io/mart-barberia/img/logo-metalico.png">
+  <meta property="og:url" content="https://martinperozo1702-crypto.github.io/mart-barberia">
+  <meta property="og:type" content="website">
   <style>
     *,
     *::before,
@@ -29,9 +34,9 @@
       --border: rgba(180, 170, 155, 0.15);
       --border-hover: rgba(200, 190, 175, 0.35);
       --silver: #c8c0b0;
-      --silver-bright: #e8e0d0;
-      --silver-dim: #7a7268;
-      --text-muted: #4a4540;
+      --silver-bright: #f0ead8;
+      --silver-dim: #9a9288;
+      --text-muted: #6a6560;
     }
 
     html,
@@ -69,11 +74,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: repeating-linear-gradient(45deg,
-          transparent,
-          transparent 2px,
-          rgba(180, 170, 155, 0.06) 2px,
-          rgba(180, 170, 155, 0.06) 4px);
+      background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(180, 170, 155, 0.06) 2px, rgba(180, 170, 155, 0.06) 4px);
       pointer-events: none;
       z-index: 0;
     }
@@ -93,7 +94,6 @@
       gap: 0;
     }
 
-    /* ── Header ── */
     .header {
       width: 100%;
       text-align: center;
@@ -112,7 +112,6 @@
       height: 100%;
       object-fit: contain;
     }
-
 
     .name {
       font-family: 'Cormorant Garamond', serif;
@@ -143,7 +142,17 @@
       letter-spacing: 0.02em;
     }
 
-    /* ── Divider ── */
+    .cta {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: 0.15em;
+      color: var(--silver-bright);
+      margin-top: 10px;
+      opacity: 1;
+    }
+
     .divider {
       width: 100%;
       display: flex;
@@ -168,7 +177,6 @@
       flex-shrink: 0;
     }
 
-    /* ── Services ── */
     .services {
       display: flex;
       gap: 24px;
@@ -193,13 +201,34 @@
       border-radius: 50%;
     }
 
-    /* ── Links ── */
+    .horarios {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .horario-titulo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 6px;
+    }
+
+    .horario-texto {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--silver-bright);
+    }
+
     .links {
       width: 100%;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 48px;
+      margin-bottom: 24px;
     }
 
     .link-btn {
@@ -272,7 +301,37 @@
       transform: translateX(3px);
     }
 
-    /* ── Footer ── */
+    .ubicacion {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      opacity: 1;
+      transition: opacity 0.25s ease;
+    }
+
+    .ubicacion:hover {
+      opacity: 0.8;
+    }
+
+    .ubicacion-icon {
+      width: 16px;
+      height: 16px;
+      color: var(--silver-bright);
+      flex-shrink: 0;
+    }
+
+    .ubicacion-texto {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--silver-bright);
+      text-decoration: none;
+    }
+
     .footer {
       width: 100%;
       text-align: center;
@@ -284,10 +343,9 @@
       font-size: 0.65rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--silver);
     }
 
-    /* ── Animations ── */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -320,65 +378,19 @@
       animation: fadeUp 0.7s 0.6s ease both;
     }
 
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(45deg,
-          transparent,
-          transparent 2px,
-          rgba(180, 170, 155, 0.06) 2px,
-          rgba(180, 170, 155, 0.06) 4px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .cta {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      font-style: italic;
-      letter-spacing: 0.15em;
-      color: var(--silver-bright);
-      margin-top: 10px;
-      opacity: 1;
-    }
-
-    .horarios {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .horario-titulo {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--silver);
-      margin-bottom: 6px;
-    }
-
-    .horario-texto {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--silver-bright);
-    }
-
     @media (max-width: 480px) {
+      .wrapper {
+        padding: 0 16px;
+      }
+
       .logo-mark {
-        width: 200px;
-        height: 200px;
+        width: 140px;
+        height: 140px;
         margin: 0 auto -10px;
+      }
 
-        .label-desktop {
-          display: none;
-        }
-
-        .label-mobile {
-          display: inline;
-        }
+      .name {
+        font-size: 2rem;
       }
 
       .link-btn {
@@ -386,40 +398,16 @@
         font-size: 0.8rem;
       }
     }
-
-    .label-mobile {
-      display: none;
-    }
-
-    .label-desktop {
-      display: inline;
-    }
-
-    .wrapper {
-      padding: 0 16px;
-    }
-
-    .name {
-      font-size: 2rem;
-    }
   </style>
-  <meta name="description" content="Barbería premium a domicilio en Medellín. Cortes, barba y cejas con Martin Perozo.">
-  <meta property="og:title" content="Martin Perozo — Barbero Profesional">
-  <meta property="og:description" content="Barbería premium a domicilio en Medellín. Cortes, barba y cejas.">
-  <meta property="og:image" content="https://martinperozo1702-crypto.github.io/mart-barberia/img/logo-metalico.png">
-  <meta property="og:url" content="https://martinperozo1702-crypto.github.io/mart-barberia">
-  <meta property="og:type" content="website">
 </head>
 
 <body>
   <div class="wrapper">
 
     <div class="header">
-      <!-- M monogram SVG -->
       <div class="logo-mark">
         <img src="img/logo-metalico.png" alt="Logo Martin Perozo">
       </div>
-
       <h1 class="name">Martin Perozo</h1>
       <p class="title">Barbero Profesional</p>
       <p class="subtitle">Servicio a domicilio</p>
@@ -440,6 +428,7 @@
       <p class="horario-titulo">Disponibilidad</p>
       <p class="horario-texto">Lunes a Sábado &nbsp;·&nbsp; 8am – 6pm</p>
     </div>
+
     <div class="links">
 
       <!-- WhatsApp -->
@@ -462,30 +451,29 @@
         <span class="link-arrow">→</span>
       </a>
 
+      <!-- TikTok -->
+      <a href="https://tiktok.com/@martp_17" class="link-btn" target="_blank" rel="noopener">
+        <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+        </svg>
+        <span class="link-label">TikTok</span>
+        <span class="link-arrow">→</span>
+      </a>
+
     </div>
 
-    <!-- TikTok -->
-    <a href="https://tiktok.com/@martp_17" class="link-btn" target="_blank" rel="noopener">
-      <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
-        <path
-          d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
-      </svg>
-      <span class="link-label">TikTok</span>
-      <span class="link-arrow">→</span>
-    </a>
-
     <!-- Ubicación -->
-    <a href="https://maps.google.com/?q=Medellín,+Antioquia,+Colombia" class="link-btn" target="_blank" rel="noopener">
-      <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+    <div class="ubicacion">
+      <svg class="ubicacion-icon" viewBox="0 0 24 24" fill="currentColor">
         <path
           d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
       </svg>
-      <span class="link-label">
-        <span class="label-desktop">Medellín y Área Metropolitana</span>
-        <span class="label-mobile">Medellín y Área Metro</span>
-      </span>
-      <span class="link-arrow">→</span>
-    </a>
+      <a href="https://maps.google.com/?q=Medellín,+Antioquia,+Colombia" target="_blank" rel="noopener"
+        class="ubicacion-texto">
+        Medellín y Área Metropolitana
+      </a>
+    </div>
 
     <div class="divider"><span class="divider-dot"></span></div>
 
