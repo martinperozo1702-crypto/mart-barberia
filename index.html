@@ -101,8 +101,8 @@
     }
 
     .logo-mark {
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: 300px;
       margin: 0 auto -20px;
       position: relative;
     }
@@ -144,15 +144,12 @@
 
     .cta {
       font-family: 'Rajdhani', sans-serif;
-      font-style: normal;
       font-size: 1.1rem;
       font-weight: 400;
-      font-style: italic;
       letter-spacing: 0.15em;
       color: var(--silver-bright);
       margin-top: 10px;
       margin-bottom: 20px;
-      /* ← agrega esta línea */
       opacity: 1;
     }
 
@@ -185,7 +182,7 @@
       gap: 24px;
       align-items: center;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-bottom: 16px;
     }
 
     .service-item {
@@ -204,28 +201,67 @@
       border-radius: 50%;
     }
 
-    .horarios {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .horario-titulo {
+    /* ── Botón Calendly ── */
+    .calendly-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 24px;
+      margin-bottom: 20px;
+      background: transparent;
+      border: 0.5px solid rgba(180, 170, 155, 0.3);
+      border-radius: 2px;
+      text-decoration: none;
+      color: var(--silver);
       font-family: 'Rajdhani', sans-serif;
-      font-size: 0.6rem;
-      color: var(--text-muted);
-      font-weight: 600;
-      letter-spacing: 0.25em;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
     }
 
-    .horario-texto {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 400;
+    .calendly-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+          rgba(200, 192, 176, 0) 0%,
+          rgba(200, 192, 176, 0.08) 40%,
+          rgba(240, 234, 216, 0.15) 50%,
+          rgba(200, 192, 176, 0.08) 60%,
+          rgba(200, 192, 176, 0) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .calendly-btn:hover {
+      background: linear-gradient(135deg, #1a1a1a 0%, #232320 40%, #2a2a26 50%, #232320 60%, #1a1a1a 100%);
+      border-color: rgba(200, 192, 176, 0.6);
       color: var(--silver-bright);
+      transform: scaleX(1.02);
+      box-shadow: 0 0 20px rgba(180, 170, 155, 0.1), inset 0 0 20px rgba(180, 170, 155, 0.05);
     }
 
+    .calendly-btn:hover::after {
+      opacity: 1;
+    }
+
+    .calendly-btn:hover .link-icon {
+      opacity: 1;
+      filter: drop-shadow(0 0 4px rgba(200, 192, 176, 0.4));
+    }
+
+    .calendly-btn:active {
+      transform: scaleX(0.99);
+      box-shadow: 0 0 10px rgba(180, 170, 155, 0.15), inset 0 0 30px rgba(180, 170, 155, 0.08);
+    }
+
+    /* ── Botones redes ── */
     .links {
       width: 100%;
       display: flex;
@@ -304,6 +340,7 @@
       transform: translateX(3px);
     }
 
+    /* ── Ubicación ── */
     .ubicacion {
       display: flex;
       align-items: center;
@@ -321,7 +358,7 @@
     .ubicacion-icon {
       width: 16px;
       height: 16px;
-      color: var(--silver-bright);
+      color: var(--silver-dim);
       flex-shrink: 0;
     }
 
@@ -335,6 +372,7 @@
       text-decoration: none;
     }
 
+    /* ── Footer ── */
     .footer {
       width: 100%;
       text-align: center;
@@ -349,6 +387,7 @@
       font-size: 0.6rem;
     }
 
+    /* ── Animaciones ── */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -381,6 +420,7 @@
       animation: fadeUp 0.7s 0.6s ease both;
     }
 
+    /* ── Responsivo ── */
     @media (max-width: 480px) {
       .wrapper {
         padding: 0 16px;
@@ -399,6 +439,11 @@
       .link-btn {
         padding: 12px 16px;
         font-size: 0.8rem;
+      }
+
+      .calendly-btn {
+        padding: 14px 16px;
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -425,16 +470,19 @@
       <span class="service-sep"></span>
       <span class="service-item">Cejas</span>
     </div>
-    <p class="cta">Agenda tu cita hoy</p>
 
-    <div class="horarios">
-      <p class="horario-titulo">Disponibilidad</p>
-      <p class="horario-texto">Lunes a Sábado &nbsp;·&nbsp; 8am – 6pm</p>
-    </div>
+    <!-- Botón Calendly — 
+    <a href="https://calendly.com/martprz1702/30min" class="calendly-btn" target="_blank" rel="noopener">
+      <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
+      </svg>
+      Agendar cita
+    </a>
 
+    <!-- Botones redes sociales -->
     <div class="links">
 
-      <!-- WhatsApp -->
       <a href="https://wa.me/573011824149" class="link-btn" target="_blank" rel="noopener">
         <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
           <path
@@ -444,7 +492,6 @@
         <span class="link-arrow">→</span>
       </a>
 
-      <!-- Instagram -->
       <a href="https://instagram.com/martp_17" class="link-btn" target="_blank" rel="noopener">
         <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
           <path
@@ -454,7 +501,6 @@
         <span class="link-arrow">→</span>
       </a>
 
-      <!-- TikTok -->
       <a href="https://tiktok.com/@martp_17" class="link-btn" target="_blank" rel="noopener">
         <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
           <path
