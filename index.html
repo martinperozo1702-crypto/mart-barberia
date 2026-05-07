@@ -190,59 +190,6 @@
       border-radius: 50%;
     }
 
-    .calendly-btn {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 18px 24px;
-      margin-bottom: 20px;
-      background: transparent;
-      border: 0.5px solid rgba(180, 170, 155, 0.3);
-      border-radius: 2px;
-      text-decoration: none;
-      color: var(--silver);
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .calendly-btn::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(200, 192, 176, 0) 0%, rgba(200, 192, 176, 0.08) 40%, rgba(240, 234, 216, 0.15) 50%, rgba(200, 192, 176, 0.08) 60%, rgba(200, 192, 176, 0) 100%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .calendly-btn:hover {
-      background: linear-gradient(135deg, #1a1a1a 0%, #232320 40%, #2a2a26 50%, #232320 60%, #1a1a1a 100%);
-      border-color: rgba(200, 192, 176, 0.6);
-      color: var(--silver-bright);
-      transform: scaleX(1.02);
-      box-shadow: 0 0 20px rgba(180, 170, 155, 0.1), inset 0 0 20px rgba(180, 170, 155, 0.05);
-    }
-
-    .calendly-btn:hover::after {
-      opacity: 1;
-    }
-
-    .calendly-btn:hover .link-icon {
-      opacity: 1;
-      filter: drop-shadow(0 0 4px rgba(200, 192, 176, 0.4));
-    }
-
-    .calendly-btn:active {
-      transform: scaleX(0.99);
-    }
-
     .links {
       width: 100%;
       display: flex;
@@ -397,6 +344,28 @@
       animation: fadeUp 0.7s 0.6s ease both;
     }
 
+    .disponibilidad {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--silver-dim);
+      text-align: center;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .disponibilidad::before,
+    .disponibilidad::after {
+      content: '';
+      flex: 1;
+      height: 0.5px;
+      background: rgba(180, 170, 155, 0.2);
+    }
+
     @media (max-width: 480px) {
       .wrapper {
         padding: 0 16px;
@@ -456,13 +425,9 @@
       <span class="service-item">Cejas</span>
     </div>
 
-    <a href="https://calendly.com/martprz1702/30min" class="calendly-btn" target="_blank" rel="noopener">
-      <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
-        <path
-          d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
-      </svg>
-      Agendar cita
-    </a>
+    <div class="disponibilidad">
+      <span>Consulta disponibilidad</span>
+    </div>
 
     <div class="links">
 
